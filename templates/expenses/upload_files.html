@@ -1,0 +1,46 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href={% url "expenses" %}>Home</a></li>
+    <li class="breadcrumb-item" aria-current="page">My Expenses</li>
+  </ol>
+</nav>
+<h1>Add Files</h1>
+
+    <div class="card">
+        <div class="card-body">
+   <form action="" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}  {% include "partials/_messages.html" %} 
+        <table>
+    {{ form.as_table }}
+    </table>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+
+             <form name="form" enctype="multipart/form-data" method="post">
+                {% csrf_token%} {% include "partials/_messages.html" %}
+                <div class="mb-3">
+                  <label for="exampleInputTitle1" class="form-label">Title</label>
+                  <input name="title" type="text" class="form-control" id="exampleInputTitle1" >
+                </div>
+                 <div class="mb-3">
+                  <label for="exampleInputTitle1" class="form-label">Author</label>
+                  <input name="author" type="text" class="form-control" id="exampleInputauthor1" >
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputImage1" class="form-label">Image</label>
+                  <input name="file" type="file" class="form-control" id="exampleInputImage1" accept="image/*" >
+
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+
+
+</div>
+{% comment %} <script src={% static "js/uploadFiles.js" %}></script> {% endcomment %}
+{% endblock content %}

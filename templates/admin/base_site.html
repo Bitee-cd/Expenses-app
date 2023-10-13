@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %} {%load static %} {% block branding %}
+
+<h1 id="head">
+  <img width="35" height="35" src="{% static "images/logo.png" %}" alt="logo" />
+  BiteeExpenses
+</h1>
+
+{% endblock branding %} {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/adminstyle.css' %}" />
+{% endblock extrastyle %}
