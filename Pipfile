@@ -4,10 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 psycopg2-binary = "*"
 validate-email = "*"
-email-validate = "*"
+
 six = "*"
 cloudinary = "*"
 django-cloudinary-storage = "*"
